@@ -1,0 +1,7 @@
+component Block {
+    ColorRGBA Color;
+    bool HasPowerUp;
+    bool Hit;
+    int BlockIndex;
+    PowerUpType PowerUpType;
+}

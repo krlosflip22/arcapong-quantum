@@ -1,0 +1,20 @@
+singleton component PowerUp {
+
+}
+
+enum PowerUpType {
+    None = 0, ExpandPaddle = 1, GhostBlocks = 2
+}
+
+struct PowerUpStruct {
+    PowerUpType Type;
+    int BlockIndex;
+    EntityRef Owner;
+    FP Time;
+}
+
+signal OnPowerUpActivated(EntityRef owner, int blockIndex, PowerUpType type);
+signal OnPowerUpDeactivated(EntityRef owner, int blockIndex, PowerUpType type);
+
+synced event OnPowerUpActivated { int index; int blockIndex; PowerUpType type; }
+synced event OnPowerUpDeactivated { int index; int blockIndex; PowerUpType type; }
